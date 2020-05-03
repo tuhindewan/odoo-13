@@ -49,6 +49,7 @@ class HospitalAppointment(models.Model):
     ],
         string='Blood Group', )
     contact_no = fields.Char(string='Contact Number', related='patient_id.contact_no')
+    doctor_id = fields.Many2one('hospital.doctor', string='Doctor')
     notes = fields.Text(string="Registration Notes")
     doc_notes = fields.Text(string="Doctor Notes")
     pharmacy_notes = fields.Text(string="Pharmacy Notes")

@@ -44,6 +44,7 @@
                         <group>
                             <field name="patient_id"/>
                             <field name="appointment_date"/>
+                            <field name="doctor_id"/>
                         </group>
                         <group>
                             <field name="patient_age"/>
