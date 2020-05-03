@@ -49,6 +49,12 @@ class HospitalPatient(models.Model):
     def get_appointment_count(self):
         self.appointment_count = self.env['hospital.appointment'].search_count([('patient_id', '=', self.id)])
 
+    def name_get(self):
+        result = []
+        for record in self:
+            result.append((record.id, "{} - {}".format(record.patient_seq, record.patient_name)))
+        return result
+
     patient_seq = fields.Char(string='Patient Sequence',
                               required=True, copy=False,
                               readonly=True,
