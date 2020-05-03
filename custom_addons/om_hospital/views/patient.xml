@@ -116,6 +116,17 @@
           </p>
         </field>
     </record>
+
+    <!--Create Appointment Action Add in Action Button Group-->
+      <record id="appointment_action_button" model="ir.actions.act_window">
+          <field name="name">Appointment</field>
+          <field name="type">ir.actions.act_window</field>
+          <field name="res_model">hospital.appointment</field>
+          <field name="domain">[('patient_id', '=', active_id)]</field>
+          <field name="view_mode">tree,form</field>
+          <field name="view_id" ref="om_hospital.appointment_tree_view"/>
+          <field name="binding_model_id" ref="model_hospital_patient"/>
+      </record>
     <!-- Top menu item -->
     <menuitem name="Hospital"
               id="om_hospital.menu_root"
