@@ -26,6 +26,7 @@
         'security/ir.model.access.csv',
         'security/security.xml',
         'data/patient_sequence.xml',
+        'data/appointment_mail_templates.xml',
         'data/data.xml',
         'views/doctor.xml',
         'views/appointment.xml',

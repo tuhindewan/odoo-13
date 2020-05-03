@@ -72,3 +72,4 @@ class HospitalAppointment(models.Model):
         default='draft')
     appointment_lines = fields.One2many('hospital.appointment.line', 'appointment_id',
                                         string='Medicine Lists')
+    pro = fields.Many2one('res.users', string='PRO')
