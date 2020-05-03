@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_patient_document">
+        <t t-call="web.external_layout">
+            <t t-foreach="docs" t-as="doc">
+                <table style="width:100%">
+                      <tr>
+                        <th>Appointment ID</th>
+                        <th>Patient Name</th>
+                        <th>Patient ID</th>
+                        <th>Age</th>
+                        <th>Contact No</th>
+                        <th>Doctor</th>
+                        <th>Date</th>
+                      </tr>
+                      <tr>
+                        <td><t t-esc="doc.name"/></td>
+                        <td><t t-esc="doc.patient_id.patient_name"/></td>
+                        <td><t t-esc="doc.patient_id.patient_seq"/></td>
+                        <td><t t-esc="doc.patient_age"/></td>
+                        <td><t t-esc="doc.contact_no"/></td>
+                        <td><t t-esc="doc.doctor_id.name"/></td>
+                        <td><t t-esc="doc.appointment_date"/></td>
+                      </tr>
+                    </table>
+            </t>
+        </t>
+    </template>
+
+    <template id="appointment_details_card">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="om_hospital.report_patient_document"/>
+            </t>
+        </t>
+    </template>
+</odoo>

@@ -32,6 +32,7 @@
         'wizards/create_appointment.xml',
         'views/patient.xml',
         'views/report_patient_card.xml',
+        'reports/appointment_details_card.xml',
         'reports/report.xml',
         'views/views.xml',
         'views/templates.xml',
