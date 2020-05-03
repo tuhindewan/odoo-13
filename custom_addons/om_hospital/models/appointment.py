@@ -29,6 +29,12 @@ class HospitalAppointment(models.Model):
             if record.patient_id:
                 record.blood_group = record.patient_id.blood_group
 
+    @api.onchange('patient_id')
+    def set_patient_email_address(self):
+        for record in self:
+            if record.patient_id:
+                record.email_address = record.patient_id.email
+
     name = fields.Char(string='Appointment ID',
                        required=True,
                        copy=False,
@@ -49,6 +55,7 @@ class HospitalAppointment(models.Model):
     ],
         string='Blood Group', )
     contact_no = fields.Char(string='Contact Number', related='patient_id.contact_no')
+    email_address = fields.Char(string='Email Address')
     doctor_id = fields.Many2one('hospital.doctor', string='Doctor')
     notes = fields.Text(string="Registration Notes")
     doc_notes = fields.Text(string="Doctor Notes")

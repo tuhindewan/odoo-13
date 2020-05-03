@@ -89,6 +89,7 @@ class HospitalPatient(models.Model):
         string='Gender')
     contact_no = fields.Char(string='Contact Number',
                              required=True)
+    email = fields.Char(string='Email Address')
     image = fields.Binary(string="Image",
                           required=True)
     notes = fields.Text(string="Notes")

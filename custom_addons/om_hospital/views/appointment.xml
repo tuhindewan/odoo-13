@@ -50,6 +50,7 @@
                             <field name="patient_age"/>
                             <field name="blood_group"/>
                             <field name="contact_no"/>
+                            <field name="email_address"/>
                         </group>
                     </group>
                     <group>

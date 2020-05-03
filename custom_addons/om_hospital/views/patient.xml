@@ -64,6 +64,7 @@
                         <group>
                             <field name="patient_age"/>
                             <field name="age_group"/>
+                            <field name="email"/>
                             <field name="doctor"
                                    options="{'no_create': True, 'no_create_edit': True}"/>
                         </group>
