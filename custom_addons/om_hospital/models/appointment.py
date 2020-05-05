@@ -35,6 +35,11 @@ class HospitalAppointment(models.Model):
             if record.patient_id:
                 record.email_address = record.patient_id.email
 
+    def send_appointment_details_to_patient(self):
+        template_id = self.env.ref('om_hospital.appointment_details_mail_template').id
+        template = self.env['mail.template'].browse(template_id)
+        template.send_mail(self.id, force_send=True)
+
     name = fields.Char(string='Appointment ID',
                        required=True,
                        copy=False,
