@@ -33,6 +33,10 @@
                     <field name="state"
                            widget="statusbar"
                            statusbar_visible="draft,confirm,done"/>
+                    <button name="send_appointment_details_to_patient"
+                            string="Send Appointment"
+                            type="object"
+                            class="oe_highlight"/>
                 </header>
                 <sheet>
                     <div class="oe_title">
